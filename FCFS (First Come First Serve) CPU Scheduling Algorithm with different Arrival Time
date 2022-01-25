@@ -1,0 +1,54 @@
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int A[4],B[4],C[4],wt=0;
+    for(int i=0;i<4;i++){
+        cin>>A[i]>>B[i]>>C[i];
+    }
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            if(B[j]==i+1){
+                if(i==0)
+                A[j]=wt;
+                else
+                    A[j]=wt-B[j];
+                wt+=C[j];
+            }
+        }
+    }
+    for(int i=0;i<4;i++)
+        if(i!=3)
+        cout<<"P"<<i+1<<" (WT="<<A[i]<<"), ";
+    else
+        cout<<"P"<<i+1<<" (WT="<<A[i]<<")";
+    return 0;
+}
